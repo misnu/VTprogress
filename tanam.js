@@ -51,6 +51,7 @@ var VT = {
         VT.currentHeight = VT.HEIGHT;
         // this is our canvas element
         VT.canvas = document.getElementsByTagName('canvas')[0];
+        
         // setting this is important
         // otherwise the browser will
         // default to 320 x 200
@@ -75,6 +76,7 @@ var VT = {
             // cover the screen width
             VT.wave.total = Math.ceil(VT.WIDTH / VT.wave.r) + 1;
        
+      
         // init background 
         background = new Image();
         background.src = 'image/bg.png';
@@ -124,9 +126,9 @@ var VT = {
             // set the new canvas style width & height
             // note: our canvas is still 320x480 but
             // we're essentially scaling it with CSS
-            VT.canvas.style.width = VT.currentWidth + 'px';
+            VT.canvas.style.width = window.innerWidth + 'px';
             VT.canvas.style.height = VT.currentHeight + 'px';
-    
+         
             // the amount by which the css resized canvas
             // is different to the actual (480x320) size.
             VT.scale = VT.currentWidth / VT.WIDTH;
